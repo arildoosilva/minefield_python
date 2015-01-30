@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import random
-opcao = raw_input("Opcoes:\n 1 = 10x10\n 2 = 20x20\n 3 = 30x30\nEscolha a dificuldade: ")
+opcao = raw_input("Options:\n 1 = 10x10\n 2 = 20x20\n 3 = 30x30\nChoose the size: ")
 tmn = 0
 if opcao == "1":
     tmn=10
@@ -13,10 +13,10 @@ elif opcao == "3":
     bm=random.randint(30, 70)
 else:
     exit    
-print "\nO tamanho do campo sera de %d de altura por %d de largura\n" % (tmn, tmn)
+print "\nThe field size will have a height of %d and width of %d\n" % (tmn, tmn)
 campo = [[0 for x in xrange(tmn)] for x in xrange(tmn)]
-def criacampo():
 
+def criacampo(): #fills the field with 0s
     for i in range(0, tmn):
         for j in range(0, tmn):
             campo[i][j]=0
@@ -46,9 +46,9 @@ def pontos():
             else:
                 x = x + "%d "  % campo[i][j]
         x = x + "\n"
-    print "Campo:"
+    print "Field:"
     print x
 criacampo()
 populavetor()
 pontos()
-raw_input("Pressione qualquer tecla para fechar a janela")
+raw_input("Press any key to close")
